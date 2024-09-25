@@ -1,0 +1,92 @@
+@import './vatiables.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	background-color: $background-color;
+	color: $text-color;
+}
+
+.flex-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.wrapper {
+	@extend .flex-center;
+	max-width: 1440px;
+	padding: 40px;
+	margin-top: 40px;
+
+	@media screen and (max-width: 600px) {
+		padding: 15px;
+		margin-top: 28px;
+	}
+}
+
+.main {
+	@extend .flex-center;
+	width: 100%;
+	margin-top: 80px;
+}
+
+@mixin heading($n) {
+	font-weight: 700;
+	font-size: $n;
+}
+
+h2 {
+	@include heading(36px);
+}
+h3 {
+	@include heading(26px);
+}
+h4 {
+	@include heading(32px);
+	font-weight: 400;
+}
+
+@media screen and (max-width: 600px) {
+	.wrapper {
+		padding: 15px;
+		margin-top: 28px;
+	}
+	.main {
+		margin-top: 34px;
+	}
+	h2 {
+		font-size: 28px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 22px;
+	}
+	h4 {
+		font-size: 18px;
+	}
+}
+
+li {
+	color: $accent-color;
+	margin-bottom: 10px;
+	font-weight: 300;
+	line-height: 19px;
+
+	span {
+		color: $text-color;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	/* Уменьшите количество анимаций или отключите их */
+	.animated {
+		transition: none;
+		animation: none;
+	}
+}

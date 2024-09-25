@@ -1,0 +1,27 @@
+@import '@/styles/vatiables.scss';
+
+.program {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 58px;
+
+	&_modules {
+		display: flex;
+		flex-direction: row;
+		gap: 45px;
+		margin-top: 65px;
+
+		@media screen and (max-width: 1024px) {
+			flex-direction: column;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		width: 100%;
+		margin-bottom: 26px;
+
+		&_modules {
+			gap: 10px;
+			margin-top: 30px;
+		}
+	}
+}
